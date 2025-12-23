@@ -1,7 +1,60 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    // Use absolute path for turbopack root to fix warning
+    root: process.cwd(),
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pub-8b15d5b605d145fcbbb84efa59618960.r2.dev',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+    qualities: [75, 90, 100], // Include 100 for hero images
+  },
+  // Add security & cache headers for static assets
+  async headers() {
+    return [
+      {
+        // Apply ONLY to specific static file types to avoid caching HTML/API responses
+        source: '/:all*(svg|jpg|png|webp|avif|css|js|woff|woff2|ttf|otf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year caching
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+      {
+        // General security headers for all routes
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

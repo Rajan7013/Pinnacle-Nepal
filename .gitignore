@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +40,31 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.env.local
+.env
+
+# Database and SQL files
+*.sql
+
+# Python scripts and virtual environments
+*.py
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Batch files
+*.bat
+
+# Backup files
+*_backup.*
+*.bak
+
+# Wrangler (Cloudflare)
+.wrangler/
+wrangler.toml
+
+# IDE
+.vscode/
+.idea/

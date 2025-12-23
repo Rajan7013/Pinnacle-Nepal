@@ -9,15 +9,31 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.89.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.1",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
     "next": "16.1.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-hook-form": "^7.69.0",
+    "react-icons": "^5.4.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.2.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251218.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
+    "drizzle-kit": "^0.31.8",
     "eslint": "^9",
     "eslint-config-next": "16.1.0",
     "tailwindcss": "^4",
