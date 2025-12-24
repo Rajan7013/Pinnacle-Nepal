@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export', // Enable static export for GitHub Pages
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -22,41 +24,11 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    qualities: [75, 90, 100], // Include 100 for hero images
+    qualities: [75, 90, 100],
   },
-  // Add security & cache headers for static assets
-  async headers() {
-    return [
-      {
-        // Apply ONLY to specific static file types to avoid caching HTML/API responses
-        source: '/:all*(svg|jpg|png|webp|avif|css|js|woff|woff2|ttf|otf)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable', // 1 year caching
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-        ],
-      },
-      {
-        // General security headers for all routes
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-        ],
-      },
-    ];
-  },
+  // Set basePath for GitHub Pages (replace 'your-repo-name' with actual repo name)
+  basePath: process.env.NODE_ENV === 'production' ? '/Pinnacle-Nepal' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/pinnacle-nepal/' : '',
 };
 
 export default nextConfig;
