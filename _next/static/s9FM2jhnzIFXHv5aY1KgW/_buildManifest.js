@@ -3,7 +3,7 @@ self.__BUILD_MANIFEST = {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/pinnacle-nepal//_next/:path+",
+        "source": "/Pinnacle-Nepal//_next/:path+",
         "destination": "/Pinnacle-Nepal/_next/:path+"
       }
     ],
