@@ -43,7 +43,7 @@ export default function AnimatedCard({
                 transition: {
                     duration: 6,
                     repeat: Infinity,
-                    ease: "easeInOut",
+                    repeatType: "loop" as const,
                 },
             },
             whileHover: { scale: 1.05 },

@@ -1,0 +1,198 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { HiGlobeAlt } from "react-icons/hi";
+
+const countries = [
+    {
+        id: "usa",
+        name: "United States",
+        flag: "🇺🇸",
+        gradient: "from-blue-500 to-red-500"
+    },
+    {
+        id: "canada",
+        name: "Canada",
+        flag: "🇨🇦",
+        gradient: "from-red-500 to-white"
+    },
+    {
+        id: "india",
+        name: "India",
+        flag: "🇮🇳",
+        gradient: "from-orange-500 to-green-500"
+    },
+    {
+        id: "uk",
+        name: "United Kingdom",
+        flag: "🇬🇧",
+        gradient: "from-blue-500 to-red-500"
+    },
+    {
+        id: "australia",
+        name: "Australia",
+        flag: "🇦🇺",
+        gradient: "from-blue-500 to-white"
+    },
+    {
+        id: "europe",
+        name: "Europe",
+        flag: "🇪🇺",
+        gradient: "from-blue-500 to-yellow-500"
+    },
+    {
+        id: "china",
+        name: "China",
+        flag: "🇨🇳",
+        gradient: "from-red-500 to-yellow-500"
+    },
+    {
+        id: "malaysia",
+        name: "Malaysia",
+        flag: "🇲🇾",
+        gradient: "from-blue-500 to-red-500"
+    },
+    {
+        id: "bangladesh",
+        name: "Bangladesh",
+        flag: "🇧🇩",
+        gradient: "from-green-500 to-red-500"
+    },
+    {
+        id: "cyprus",
+        name: "Cyprus",
+        flag: "🇨🇾",
+        gradient: "from-orange-500 to-green-500"
+    },
+    {
+        id: "georgia",
+        name: "Georgia",
+        flag: "🇬🇪",
+        gradient: "from-red-500 to-white"
+    },
+    {
+        id: "kazakhstan",
+        name: "Kazakhstan",
+        flag: "🇰🇿",
+        gradient: "from-blue-500 to-yellow-500"
+    },
+    {
+        id: "russia",
+        name: "Russia",
+        flag: "🇷🇺",
+        gradient: "from-white to-blue-500"
+    },
+    {
+        id: "turkey",
+        name: "Turkey",
+        flag: "🇹🇷",
+        gradient: "from-red-500 to-white"
+    },
+    {
+        id: "newzealand",
+        name: "New Zealand",
+        flag: "🇳🇿",
+        gradient: "from-blue-500 to-red-500"
+    },
+];
+
+// Simple Full-Image Card with Country Name Overlay
+const CountryCard = ({ country, index }: { country: any; index: number }) => {
+    const [imageError, setImageError] = useState(false);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+            className="group relative cursor-pointer touch-manipulation transform-gpu transition-all duration-300 hover:scale-105"
+        >
+            {/* Full Image Card */}
+            <Link href="/destinations">
+                <div className="relative aspect-[4/3] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    {/* Background Image */}
+                    {!imageError ? (
+                        <Image
+                            src={`/images/destinations/${country.id}.jpg`}
+                            alt={country.name}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                            onError={() => setImageError(true)}
+                            sizes="(max-width: 768px) 100vw, 400px"
+                        />
+                    ) : (
+                        <div className={`absolute inset-0 bg-gradient-to-br ${country.gradient} flex items-center justify-center`}>
+                            <HiGlobeAlt className="text-6xl text-white opacity-50" />
+                        </div>
+                    )}
+
+                    {/* Dark overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+
+                    {/* Country Name - Top Left */}
+                    <div className="absolute top-6 left-6 z-10">
+                        <h3 className="text-2xl font-black text-white tracking-wide uppercase">
+                            {country.name}
+                        </h3>
+                    </div>
+
+                    {/* Flag Image - Bottom Right */}
+                    <div className="absolute bottom-6 right-6 w-16 h-16 rounded-full bg-white shadow-lg overflow-hidden border-4 border-white z-10">
+                        <Image
+                            src={`/images/flags/${country.id}.png`}
+                            alt={`${country.name} flag`}
+                            fill
+                            className="object-cover"
+                            sizes="64px"
+                        />
+                    </div>
+                </div>
+            </Link>
+        </motion.div>
+    );
+};
+
+export default function DestinationsSection() {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
+
+    return (
+        <section className="py-24 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden" id="countries">
+            {/* Static Background Pattern */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+            <div className="container mx-auto px-4 relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/50 rounded-full mb-4 text-blue-700 font-bold text-xs uppercase tracking-wider">
+                        <HiGlobeAlt className="text-lg" />
+                        Global Education
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+                        <span className="text-[#003893]">Study </span>
+                        <span className="text-[#DC143C]">Destinations</span>
+                    </h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                        Unlock world-class education with our partner institutions across the globe.
+                    </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    {countries.map((country, index) => (
+                        <CountryCard key={country.name} country={country} index={index} />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

@@ -432,3 +432,41 @@
         @apply text-3xl lg:text-4xl;
     }
 }
+
+/* Optimized Performance Animations */
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-40px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pingSlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.animate-float-particle {
+    animation: floatParticle 4s ease-in-out infinite;
+}
+
+.animate-ping-slow {
+    animation: pingSlow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

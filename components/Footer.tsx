@@ -14,10 +14,11 @@ const quickLinks = [
 ];
 
 const studyDestinations = [
-    { name: "USA", href: "/study-abroad?country=usa" },
-    { name: "UK", href: "/study-abroad?country=uk" },
-    { name: "Canada", href: "/study-abroad?country=canada" },
-    { name: "Australia", href: "/study-abroad?country=australia" },
+    { name: "India", href: "/destinations?country=india" },
+    { name: "USA", href: "/destinations?country=usa" },
+    { name: "UK", href: "/destinations?country=uk" },
+    { name: "Canada", href: "/destinations?country=canada" },
+    { name: "Australia", href: "/destinations?country=australia" },
 ];
 
 const socialLinks = [
@@ -124,14 +125,14 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <HiPhone className="text-2xl text-purple-400 flex-shrink-0" />
-                                <a href="tel:+977-1-1234567" className="text-gray-300 hover:text-white transition-smooth">
-                                    +977-1-1234567
+                                <a href="tel:+919550560184" className="text-gray-300 hover:text-white transition-smooth">
+                                    +91 9550560184
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <HiMail className="text-2xl text-pink-400 flex-shrink-0" />
-                                <a href="mailto:info@pinnaclenepal.com" className="text-gray-300 hover:text-white transition-smooth">
-                                    info@pinnaclenepal.com
+                                <a href="mailto:contact@pinnaclenepal.com" className="text-gray-300 hover:text-white transition-smooth">
+                                    contact@pinnaclenepal.com
                                 </a>
                             </li>
                         </ul>

@@ -19,7 +19,7 @@ import {
 // Clean 7-tab navigation with professional icons
 const navLinks = [
     { name: "Home", href: "/", icon: HiHome },
-    { name: "Destinations", href: "/study-abroad", icon: HiGlobeAlt },
+    { name: "Destinations", href: "/destinations", icon: HiGlobeAlt },
     { name: "Services", href: "/services", icon: HiBriefcase },
     { name: "Programs", href: "/study-programs", icon: HiAcademicCap },
     { name: "Gallery", href: "/gallery", icon: HiPhotograph },
@@ -75,13 +75,65 @@ export default function Header() {
                                 const isActive = pathname === link.href;
                                 const Icon = link.icon;
 
+                                // Special handling for Destinations dropdown
+                                if (link.name === "Destinations") {
+                                    return (
+                                        <div key={link.name} className="relative group">
+                                            <Link
+                                                href={link.href}
+                                                className={`px-3 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${isActive
+                                                    ? "text-[#DC143C]"
+                                                    : "text-[#003893] hover:text-[#DC143C]"
+                                                    }`}
+                                            >
+                                                <Icon className="text-lg" />
+                                                {link.name}
+                                            </Link>
+
+                                            {/* Dropdown Menu */}
+                                            <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
+                                                <div className="p-4">
+                                                    <p className="text-xs font-bold text-gray-600 mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Study Destinations</p>
+                                                    <div className="grid grid-cols-2 gap-2 max-h-96 overflow-y-auto">
+                                                        {[
+                                                            { name: 'USA', id: 'usa' },
+                                                            { name: 'Canada', id: 'canada' },
+                                                            { name: 'India', id: 'india' },
+                                                            { name: 'Australia', id: 'australia' },
+                                                            { name: 'UK', id: 'uk' },
+                                                            { name: 'Europe', id: 'europe' },
+                                                            { name: 'Bangladesh', id: 'bangladesh' },
+                                                            { name: 'China', id: 'china' },
+                                                            { name: 'Malaysia', id: 'malaysia' },
+                                                            { name: 'Turkey', id: 'turkey' },
+                                                            { name: 'Cyprus', id: 'cyprus' },
+                                                            { name: 'Russia', id: 'russia' },
+                                                            { name: 'Kazakhstan', id: 'kazakhstan' },
+                                                            { name: 'Georgia', id: 'georgia' },
+                                                            { name: 'New Zealand', id: 'newzealand' },
+                                                        ].map((country) => (
+                                                            <Link
+                                                                key={country.id}
+                                                                href={`/destinations/${country.id}`}
+                                                                className="px-3 py-2.5 text-sm font-bold text-[#003893] hover:text-white hover:bg-[#DC143C] rounded-lg transition-all duration-200 text-center"
+                                                            >
+                                                                {country.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+
                                 return (
                                     <Link
                                         key={link.name}
                                         href={link.href}
                                         className={`px-3 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${isActive
-                                                ? "text-[#DC143C]"
-                                                : "text-[#003893] hover:text-[#DC143C]"
+                                            ? "text-[#DC143C]"
+                                            : "text-[#003893] hover:text-[#DC143C]"
                                             }`}
                                     >
                                         <Icon className="text-lg" />
@@ -145,8 +197,8 @@ export default function Header() {
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={`flex items-center gap-3 px-4 py-3 mb-2 rounded-lg font-bold transition-all duration-300 ${isActive
-                                            ? "bg-[#DC143C] text-white"
-                                            : "text-[#003893] hover:bg-[#DC143C] hover:text-white"
+                                        ? "bg-[#DC143C] text-white"
+                                        : "text-[#003893] hover:bg-[#DC143C] hover:text-white"
                                         }`}
                                 >
                                     <Icon className="text-xl" />

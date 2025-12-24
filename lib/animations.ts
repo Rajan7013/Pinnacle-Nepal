@@ -19,7 +19,7 @@ export const bounceTransition: Transition = {
 
 export const slowTransition: Transition = {
     duration: 1.2,
-    ease: "easeInOut",
+    ease: "easeInOut" as any,
 };
 
 // Fade Animations
@@ -172,7 +172,7 @@ export const cardHover = {
         boxShadow: "0 20px 40px rgba(102, 126, 234, 0.3)",
         transition: {
             duration: 0.4,
-            ease: "easeOut",
+            ease: "easeOut" as any,
         },
     },
     tap: {
@@ -189,7 +189,7 @@ export const danceEffect = {
         transition: {
             duration: 4,
             repeat: Infinity,
-            ease: "easeInOut",
+            repeatType: "loop" as const,
         },
     },
 };
@@ -202,7 +202,7 @@ export const floatEffect = {
         transition: {
             duration: 6,
             repeat: Infinity,
-            ease: "easeInOut",
+            repeatType: "loop" as const,
         },
     },
 };
@@ -215,7 +215,7 @@ export const pulseEffect = {
         transition: {
             duration: 2,
             repeat: Infinity,
-            ease: "easeInOut",
+            repeatType: "loop" as const,
         },
     },
 };
@@ -231,7 +231,7 @@ export const scrollReveal = {
         y: 0,
         transition: {
             duration: 0.8,
-            ease: [0.4, 0, 0.2, 1],
+            ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
         },
     },
 };
@@ -304,7 +304,7 @@ export const navbarSlide = {
     visible: {
         y: 0,
         opacity: 1,
-        transition: { duration: 0.5, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" as any },
     },
 };
 
@@ -343,7 +343,7 @@ export const imageReveal = {
         scale: 1,
         transition: {
             duration: 1,
-            ease: "easeOut",
+            ease: "easeOut" as any,
         },
     },
 };
