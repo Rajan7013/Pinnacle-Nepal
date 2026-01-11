@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Form Submission</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7fa;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f7fa; padding: 40px 20px;">
+        <tr>
+            <td align="center">
+                <!-- Main Container -->
+                <table width="600" cellpadding="0" cellspacing="0"
+                    style="background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+                    <!-- Header -->
+                    <tr>
+                        <td
+                            style="background: linear-gradient(135deg, #DC143C 0%, #003893 100%); padding: 30px; text-align: center;">
+                            <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: bold;">
+                                🔔 New Form Submission
+                            </h1>
+                            <p style="color: #ffffff; margin: 10px 0 0 0; font-size: 15px; opacity: 0.95;">
+                                A new inquiry has been received
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding: 35px 30px;">
+
+                            <!-- Submission Details -->
+                            <div
+                                style="background-color: #f8f9fa; border-radius: 8px; padding: 25px; margin-bottom: 25px;">
+                                <h2
+                                    style="color: #003893; margin: 0 0 20px 0; font-size: 20px; border-bottom: 2px solid #003893; padding-bottom: 10px;">
+                                    📋 Submission Details
+                                </h2>
+
+                                <table width="100%" cellpadding="8" cellspacing="0">
+                                    <tr>
+                                        <td style="color: #666666; font-size: 14px; font-weight: bold; width: 120px;">
+                                            Name:</td>
+                                        <td style="color: #333333; font-size: 15px;">{{NAME}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #666666; font-size: 14px; font-weight: bold;">Email:</td>
+                                        <td style="color: #333333; font-size: 15px;">
+                                            <a href="mailto:{{EMAIL}}"
+                                                style="color: #0052CC; text-decoration: none;">{{EMAIL}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #666666; font-size: 14px; font-weight: bold;">Phone:</td>
+                                        <td style="color: #333333; font-size: 15px;">
+                                            <a href="tel:{{PHONE}}"
+                                                style="color: #0052CC; text-decoration: none;">{{PHONE}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #666666; font-size: 14px; font-weight: bold;">Form Type:</td>
+                                        <td style="color: #333333; font-size: 15px;">{{FORM_TYPE}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #666666; font-size: 14px; font-weight: bold;">Submitted:</td>
+                                        <td style="color: #333333; font-size: 15px;">{{TIMESTAMP}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Message Section -->
+                            <div
+                                style="background-color: #e3f2fd; border-left: 4px solid #0052CC; padding: 20px; margin-bottom: 25px; border-radius: 6px;">
+                                <h3 style="color: #003893; margin: 0 0 12px 0; font-size: 16px;">
+                                    💬 Message:
+                                </h3>
+                                <p
+                                    style="color: #555555; font-size: 14px; line-height: 1.6; margin: 0; white-space: pre-wrap;">
+                                    {{MESSAGE}}</p>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div style="text-align: center; margin: 30px 0;">
+                                <a href="https://docs.google.com/spreadsheets/d/{{SHEET_ID}}"
+                                    style="display: inline-block; background-color: #003893; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: bold; margin: 0 5px;">
+                                    📊 View in Google Sheets
+                                </a>
+                                <a href="mailto:{{EMAIL}}"
+                                    style="display: inline-block; background-color: #0052CC; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: bold; margin: 0 5px;">
+                                    ✉️ Reply to User
+                                </a>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div
+                                style="background-color: #fff3cd; border-radius: 6px; padding: 15px; text-align: center;">
+                                <p style="color: #856404; font-size: 13px; margin: 0;">
+                                    ⏰ <strong>Action Required:</strong> Please respond within 24 hours for best
+                                    conversion rates
+                                </p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td
+                            style="background-color: #f8f9fa; padding: 20px 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+                            <p style="color: #777777; font-size: 12px; margin: 0;">
+                                This is an automated notification from your Pinnacle Nepal website contact form.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
