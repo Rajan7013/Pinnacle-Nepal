@@ -54,10 +54,10 @@ export default function ContactPage() {
                                 <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-blue-600 mb-4 shadow-sm">
                                     <HiLocationMarker className="text-2xl" />
                                 </div>
-                                <p className="font-bold text-blue-900 mb-2 text-lg">Visit Class</p>
+                                <p className="font-bold text-blue-900 mb-2 text-lg">Visit Us</p>
                                 <p className="text-blue-600 text-sm font-medium">
-                                    Pinnacle Nepal, Kathmandu, Nepal<br />
-                                    Thamel, Ward No. 26
+                                    New Baneshwor<br />
+                                    Kathmandu, Nepal
                                 </p>
                             </motion.div>
 
@@ -71,7 +71,10 @@ export default function ContactPage() {
                                     <HiPhone className="text-2xl" />
                                 </div>
                                 <h3 className="font-bold text-blue-900 mb-2">Call Us</h3>
-                                <p className="text-blue-600 text-sm font-medium">+91 9550560184</p>
+                                <div className="text-blue-600 text-sm font-medium">
+                                    <a href="tel:+9779852062628" className="block hover:text-blue-800 transition-colors">+977 9852062628</a>
+                                    <a href="tel:+9779814362628" className="block hover:text-blue-800 transition-colors">+977 9814362628</a>
+                                </div>
                             </motion.div>
 
                             <motion.div
@@ -97,9 +100,10 @@ export default function ContactPage() {
                                     <HiClock className="text-2xl" />
                                 </div>
                                 <h3 className="font-bold text-blue-900 mb-2">Office Hours</h3>
-                                <div className="text-sm text-blue-600 font-medium">
-                                    <p>Mon-Fri: 9am - 6pm</p>
-                                    <p>Sat: 10am - 4pm, Sun: Closed</p>
+                                <div className="text-sm text-blue-600 font-medium space-y-1">
+                                    <p>Sunday - Friday</p>
+                                    <p className="font-bold">9:00 AM - 6:00 PM</p>
+                                    <p className="text-red-600 font-semibold">Saturday: Closed</p>
                                 </div>
                             </motion.div>
                         </div>

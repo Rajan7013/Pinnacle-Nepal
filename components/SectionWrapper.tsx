@@ -57,7 +57,7 @@ export default function SectionWrapper({
         <section
             id={id}
             ref={ref}
-            className={`relative py-20 ${backgroundClasses[background]} ${className}`}
+            className={`relative py-8 ${backgroundClasses[background]} ${className}`}
         >
             <motion.div
                 variants={staggerContainer}
