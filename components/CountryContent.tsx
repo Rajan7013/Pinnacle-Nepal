@@ -225,43 +225,68 @@ export default function CountryContent({ country }: CountryContentProps) {
                                         <motion.div
                                             key={uni.name}
                                             variants={fadeInUp}
-                                            whileHover={{ y: -5 }}
-                                            className="bg-blue-50 rounded-xl p-4 shadow-md hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col h-full group"
+                                            whileHover={{ y: -8, scale: 1.02 }}
+                                            className="bg-blue-50 rounded-xl shadow-md hover:shadow-2xl hover:shadow-blue-400/50 border-2 border-blue-100 hover:border-blue-400 transition-all duration-300 flex flex-col h-full group overflow-hidden"
                                         >
-                                            <div className="mb-3">
-                                                <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-3 leading-tight min-h-12">
-                                                    {uni.name}
-                                                </h3>
-                                                <div className="w-8 h-1 bg-linear-to-r from-blue-400 to-purple-400 mt-2 rounded-full" />
-                                            </div>
+                                            {uni.website ? (
+                                                <a
+                                                    href={uni.website}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="p-4 flex flex-col h-full cursor-pointer"
+                                                >
+                                                    <div className="mb-3">
+                                                        <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight min-h-12">
+                                                            {uni.name}
+                                                        </h3>
+                                                    </div>
 
-                                            <div className="grow">
-                                                <h4 className="text-sm font-bold text-[#DC143C] uppercase tracking-wider mb-3">Popular Courses</h4>
-                                                {uni.courses && uni.courses.length > 0 ? (
-                                                    <ul className="space-y-2 mb-6">
-                                                        {uni.courses.map((course, cIdx) => (
-                                                            <li key={cIdx} className="text-gray-600 flex items-start gap-2 text-sm">
-                                                                <span className="text-blue-400 mt-1">•</span>
-                                                                {course}
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                ) : (
-                                                    <p className="text-gray-500 text-sm italic mb-6">Contact us for course details.</p>
-                                                )}
-                                            </div>
+                                                    <div className="grow">
+                                                        <h4 className="text-sm font-bold text-[#DC143C] uppercase tracking-wider mb-3">Popular Courses</h4>
+                                                        {uni.courses && uni.courses.length > 0 ? (
+                                                            <ul className="space-y-2 mb-6">
+                                                                {uni.courses.map((course, cIdx) => (
+                                                                    <li key={cIdx} className="text-gray-600 flex items-start gap-2 text-sm">
+                                                                        <span className="text-blue-400 mt-1">•</span>
+                                                                        {course}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        ) : (
+                                                            <p className="text-gray-500 text-sm italic mb-6">Contact us for course details.</p>
+                                                        )}
+                                                    </div>
 
-                                            {uni.website && (
-                                                <div className="mt-auto pt-6 border-t border-gray-100">
-                                                    <a
-                                                        href={uni.website}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center justify-center gap-2 w-full py-3 bg-gray-50 hover:bg-gray-100 text-[#003893] font-semibold rounded-lg transition-colors text-sm"
-                                                    >
-                                                        Visit Website
-                                                        <HiExternalLink />
-                                                    </a>
+                                                    <div className="mt-auto pt-4 border-t border-gray-200">
+                                                        <div className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-linear-to-r from-blue-600 to-blue-700 group-hover:from-blue-700 group-hover:to-blue-800 text-white font-bold rounded-lg transition-all duration-300 text-sm shadow-md">
+                                                            <span>Visit Website</span>
+                                                            <HiExternalLink className="text-lg" />
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            ) : (
+                                                <div className="p-4 flex flex-col h-full">
+                                                    <div className="mb-3">
+                                                        <h3 className="text-sm md:text-base font-bold text-gray-900 leading-tight min-h-12">
+                                                            {uni.name}
+                                                        </h3>
+                                                    </div>
+
+                                                    <div className="grow">
+                                                        <h4 className="text-sm font-bold text-[#DC143C] uppercase tracking-wider mb-3">Popular Courses</h4>
+                                                        {uni.courses && uni.courses.length > 0 ? (
+                                                            <ul className="space-y-2 mb-6">
+                                                                {uni.courses.map((course, cIdx) => (
+                                                                    <li key={cIdx} className="text-gray-600 flex items-start gap-2 text-sm">
+                                                                        <span className="text-blue-400 mt-1">•</span>
+                                                                        {course}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        ) : (
+                                                            <p className="text-gray-500 text-sm italic mb-6">Contact us for course details.</p>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             )}
                                         </motion.div>

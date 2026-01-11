@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     title: "Pinnacle Nepal - Educational Consultancy",
     description: "Your gateway to global education",
   },
+  icons: {
+    icon: '/logo.jpg',
+    apple: '/logo.jpg',
+  },
 };
 
 export default function RootLayout({
