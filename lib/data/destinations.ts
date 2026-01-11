@@ -180,8 +180,7 @@ export const destinationsData: Country[] = [
             { name: 'Vellore Institute of Technology (VIT), Vellore', website: 'https://vit.ac.in/', courses: ['B.Tech CSE', 'Biotech', 'Mechanical', 'Electronics', 'B.Des'] },
             { name: 'VIT Chennai', website: 'https://chennai.vit.ac.in/', courses: ['B.Tech CSE', 'Fashion Tech', 'Law', 'Electronics', 'Integrated M.Tech'] },
             { name: 'SRM Institute of Science and Technology, Chennai', website: 'https://www.srmist.edu.in/', courses: ['B.Tech Biotech', 'Genetic Eng', 'Nanotech', 'CSE', 'MBBS'] },
-            { name: 'SSN College of Engineering, Chennai', website: 'https://www.ssn.edu.in/', courses: ['Biomedical Eng', 'Chemical Eng', 'CSE', 'EEE', 'M.E.'] },
-            { name: 'Loyola College, Chennai', website: 'https://www.loyolacollege.edu/', courses: ['B.Com', 'Economics', 'Visual Comm', 'English', 'M.Sc'] },
+            { name: 'Saveetha University, Chennai', website: 'https://www.saveetha.ac.in/', courses: ['MBBS', 'Dentistry', 'Engineering', 'Pharmacy', 'Nursing'] },
             { name: 'Vel Tech Rangarajan Dr. Sagunthala R&D Institute, Chennai', website: 'https://www.veltech.edu.in/', courses: ['B.Tech Aero', 'Automobile', 'CSE', 'BBA', 'Law'] },
             { name: 'Amrita Vishwa Vidyapeetham, Coimbatore', website: 'https://www.amrita.edu/', courses: ['B.Tech Cyber Security', 'Robotics', 'MBBS', 'B.Sc Agriculture', 'Medicine'] },
             { name: 'KPR Institute of Engineering and Technology, Coimbatore', website: 'https://www.kpriet.ac.in/', courses: ['Biomedical Eng', 'Civil Eng', 'CSE', 'ECE', 'M.E.'] },
@@ -194,6 +193,9 @@ export const destinationsData: Country[] = [
             { name: 'Maharishi Markandeshwar (Deemed to be University), Mullana', website: 'https://www.mmumullana.org/', courses: ['MBBS', 'B.Tech', 'Physiotherapy', 'Hotel Management', 'Pharmacy'] },
             { name: 'Khalsa College, Amritsar', website: 'https://www.khalsacollege.edu.in/', courses: ['B.Sc Agriculture', 'B.Com', 'Food Tech', 'M.Sc', 'B.Sc'] },
             { name: 'Gulzar Group of Institutions (GGI), Ludhiana', website: 'https://www.ggi.ac.in/', courses: ['B.Tech CSE', 'AI', 'BBA', 'BCA', 'MBA'] },
+
+            // Rajasthan - Jaipur
+            { name: 'JK Lakshmipat University, Jaipur', website: 'https://www.jklu.edu.in/', courses: ['B.Tech CSE', 'AI & ML', 'MBA', 'Design', 'Liberal Arts'] },
 
             // Delhi NCR - New Delhi/Noida/Greater Noida/Bareilly
             { name: 'Amity University, Noida', website: 'https://www.amity.edu/', courses: ['B.Tech Biotech', 'Nanotech', 'Forensic Science', 'Fashion Design', 'MBA'] },
